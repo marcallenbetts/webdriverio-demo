@@ -20,5 +20,13 @@
   "bugs": {
     "url": "https://github.com/WillLuce/WebdriverIO_Typescript/issues"
   },
-  "homepage": "https://github.com/WillLuce/WebdriverIO_Typescript#readme"
+  "homepage": "https://github.com/WillLuce/WebdriverIO_Typescript#readme",
+  "devDependencies": {
+    "@types/chai": "^3.4.34",
+    "@types/mocha": "^2.2.32",
+    "typescript": "^2.0.6",
+    "wdio-mocha-framework": "^0.4.6",
+    "wdio-selenium-standalone-service": "0.0.7",
+    "webdriverio": "^4.2.16"
+  }
 }
