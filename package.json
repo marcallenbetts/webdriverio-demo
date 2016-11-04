@@ -4,7 +4,7 @@
   "description": "An example project using WebdriverIO with TypeScript",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "node ./node_modules/typescript/lib/tsc.js && node_modules/webdriverio/bin/wdio && node_modules/rimraf/bin.js src"
   },
   "repository": {
     "type": "git",
@@ -24,6 +24,9 @@
   "devDependencies": {
     "@types/chai": "^3.4.34",
     "@types/mocha": "^2.2.32",
+    "@types/webdriverio": "^4.0.31",
+    "chai": "^3.5.0",
+    "rimraf": "^2.5.4",
     "typescript": "^2.0.6",
     "wdio-mocha-framework": "^0.4.6",
     "wdio-selenium-standalone-service": "0.0.7",
