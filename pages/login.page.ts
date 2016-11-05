@@ -6,10 +6,10 @@ class Login_Page {
     public get form()      { return browser.element('#login') }
     public get flash()     { return browser.element('#flash') }
 
-    public open() {
+    public open(): void {
         browser.url('/login')
     }
-    public submit() {
+    public submit(): void {
         this.form.submitForm()
     }
 
