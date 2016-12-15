@@ -4,6 +4,7 @@ This directory contains the WebdriverIO page object example written using TypeSc
 ## Getting Started
 ```
 git clone git@github.com:WillLuce/WebdriverIO_Typescript.git
+cd WebdriverIO_Typescript
 npm install
 npm test
 ```
