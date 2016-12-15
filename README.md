@@ -30,7 +30,7 @@ More information at the [TypeScript Website](http://www.typescriptlang.org/docs/
 ### Intellisense
 Adding typings to your functions and variables allows your text editor to better guess what you're trying to do next. More specifically to testing with WebdriverIO, browser elements will let you know what you can do with them and what they need to do their thing.
 
-![intellisense](https://github.com/WillLuce/WebdriverIO_Typescript/blob/master/intellisense.png)
+![intellisense](https://github.com/WillLuce/WebdriverIO_Typescript/blob/master/media/intellisense.png)
 
 Typings for most libraries are availible from the [DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped) project and, since the release of TypeScript 2.0, can be installed via `npm`. For example
 ```
