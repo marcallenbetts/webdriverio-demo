@@ -1,5 +1,12 @@
 # WebdriverIO_Typescript
-This directory contains the WebdriverIO page object example written TypeScript. The usefullness of the page object pattern is discussed on the [WebdriverIO website](http://webdriver.io/guide/testrunner/pageobjects.html).
+This directory contains the WebdriverIO page object example written using TypeScript. The usefullness of the page object pattern is discussed on the [WebdriverIO website](http://webdriver.io/guide/testrunner/pageobjects.html).
+
+## Getting Started
+```
+git clone git@github.com:WillLuce/WebdriverIO_Typescript.git
+npm install
+npm test
+```
 
 ## Why TypeScript
 In short, TypeScript is a superset of JavaScript (as in all that "coming in ES6/7!" already built in) that allows optional typing.
