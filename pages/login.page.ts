@@ -1,17 +1,18 @@
+import BasePage from '../pages/base.page'
 
-class Login_Page {
-
-    public get username()  { return browser.element('#username') }
-    public get password()  { return browser.element('#password') }
-    public get form()      { return browser.element('#login') }
-    public get flash()     { return browser.element('#flash') }
+class Login_Page extends BasePage {
 
     public open(): void {
         browser.url('/login')
     }
-    public submit(): void {
-        this.form.submitForm()
-    }
+
+    public get heading()  { return browser.element('#content h2') }
+
+    public get usernameTextField() { return browser.element('#username') }
+    public get passwordTextField() { return browser.element('#password') }
+    public get loginButton() { return browser.element('button') }
+
+    public get loginMessage() { return browser.element('#flash') }
 
 }
 const LoginPage = new Login_Page()
