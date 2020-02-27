@@ -4,7 +4,7 @@
   "description": "An example project using WebdriverIO with TypeScript",
   "main": "index.js",
   "scripts": {
-    "test": "node ./node_modules/typescript/lib/tsc.js && node ./node_modules/webdriverio/bin/wdio --mochaOpts.timeout=10000 && rm -rf src"
+    "test": "node ./node_modules/typescript/lib/tsc.js && node ./node_modules/.bin/wdio --mochaOpts.timeout=10000 && rm -rf src"
   },
   "repository": {
     "type": "git",
@@ -25,10 +25,13 @@
     "@types/chai": "^3.4.34",
     "@types/mocha": "^2.2.32",
     "@types/webdriverio": "^4.4.0",
+    "@wdio/cli": "^5.18.7",
+    "@wdio/local-runner": "^5.18.7",
+    "@wdio/mocha-framework": "^5.18.7",
+    "@wdio/selenium-standalone-service": "^5.16.10",
+    "@wdio/spec-reporter": "^5.18.7",
+    "@wdio/sync": "^5.18.7",
     "chai": "^3.5.0",
-    "typescript": "^2.0.6",
-    "wdio-mocha-framework": "^0.5.7",
-    "wdio-selenium-standalone-service": "0.0.9",
-    "webdriverio": "^4.10.2"
+    "typescript": "^2.0.6"
   }
 }
