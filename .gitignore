@@ -1,6 +1,7 @@
 
 # Things that should be installed locally
 node_modules/
+src/
 
 # IDE related files
 .vscode

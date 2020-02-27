@@ -1,22 +1,29 @@
+interface IPageFooter {
+  text: string
+  link: string
+}
+
 class BasePage {
-  public get pageTitle() {
-    return browser.getTitle();
-  }
-  public get pageFooter() {
-    return $("#page-footer div:nth-of-type(1)");
-  }
-  public get pageFooterLink() {
-    return $("#page-footer a");
+  public get pageTitle(): string {
+    return browser.getTitle()
   }
 
-  public refreshPage(): void {
-    browser.refresh();
+  public get pageFooter(): IPageFooter {
+    return {
+      text: $('#page-footer div:nth-of-type(1)').getText(),
+      link: $('#page-footer a').getAttribute('href')
+    }
+  }
+
+  public refreshPage(): any {
+    browser.refresh()
+    return this
   }
 
   //get browser options. for now, just exposing the baseUrl
-  public baseUrl(): String {
-    return browser.options.baseUrl;
+  public get baseUrl(): String {
+    return browser.options.baseUrl
   }
 }
 
-export default BasePage;
+export default BasePage

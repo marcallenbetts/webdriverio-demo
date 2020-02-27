@@ -1,26 +1,47 @@
-import BasePage from "../pages/base.page";
+interface ILink {
+  text: string
+  link: string
+}
+
+import BasePage from '../pages/base.page'
 
 class StatusCodes_Page extends BasePage {
-  public open(): void {
-    browser.url("/status_codes");
+  public open(): StatusCodes_Page {
+    browser.url('/status_codes')
+    return this
   }
 
   public get heading() {
-    return $("#content h3");
+    return $('#content h3')
   }
 
-  public get twoHundred() {
-    return $("ul li:nth-of-type(1) a");
+  public get twoHundred(): ILink {
+    return {
+      text: $('ul li:nth-of-type(1) a').getText(),
+      link: $('ul li:nth-of-type(1) a').getAttribute('href')
+    }
   }
-  public get threeHundredOne() {
-    return $("ul li:nth-of-type(2) a");
+
+  public get threeHundredOne(): ILink {
+    return {
+      text: $('ul li:nth-of-type(2) a').getText(),
+      link: $('ul li:nth-of-type(2) a').getAttribute('href')
+    }
   }
-  public get fourHundredFour() {
-    return $("ul li:nth-of-type(3) a");
+
+  public get fourHundredFour(): ILink {
+    return {
+      text: $('ul li:nth-of-type(3) a').getText(),
+      link: $('ul li:nth-of-type(3) a').getAttribute('href')
+    }
   }
-  public get fiveHundred() {
-    return $("ul li:nth-of-type(4) a");
+
+  public get fiveHundred(): ILink {
+    return {
+      text: $('ul li:nth-of-type(4) a').getText(),
+      link: $('ul li:nth-of-type(4) a').getAttribute('href')
+    }
   }
 }
-const StatusCodesPage = new StatusCodes_Page();
-export default StatusCodesPage;
+const StatusCodesPage = new StatusCodes_Page()
+export default StatusCodesPage
