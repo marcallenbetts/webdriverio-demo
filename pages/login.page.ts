@@ -1,19 +1,30 @@
 import BasePage from '../pages/base.page'
 
 class Login_Page extends BasePage {
+  public open(): Login_Page {
+    browser.url('/login')
+    return this
+  }
 
-    public open(): void {
-        browser.url('/login')
-    }
+  public get heading(): string {
+    return $('#content h2').getText()
+  }
 
-    public get heading()  { return browser.element('#content h2') }
+  public get usernameTextField() {
+    return $('#username')
+  }
 
-    public get usernameTextField() { return browser.element('#username') }
-    public get passwordTextField() { return browser.element('#password') }
-    public get loginButton() { return browser.element('button') }
+  public get passwordTextField() {
+    return $('#password')
+  }
 
-    public get loginMessage() { return browser.element('#flash') }
+  public get loginButton() {
+    return $('button')
+  }
 
+  public get loginMessage(): string {
+    return $('#flash').getText()
+  }
 }
 const LoginPage = new Login_Page()
 export default LoginPage

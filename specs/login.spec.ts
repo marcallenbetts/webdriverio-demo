@@ -3,10 +3,8 @@ import HomePage from '../pages/home.page'
 import LoginPage from '../pages/login.page'
 
 describe('Login page', () => {
-
   before(function() {
-    HomePage.open()
-    HomePage.clickLinkWithText("Form Authentication")
+    HomePage.open().clickLinkWithText('Form Authentication')
   })
 
   it('Page should have title', () => {
@@ -14,23 +12,22 @@ describe('Login page', () => {
   })
 
   it('Heading should have correct text', () => {
-    expect(LoginPage.heading.getText()).to.eql('Login Page')
+    expect(LoginPage.heading).to.eql('Login Page')
   })
 
   it('Blank username and password should display error message', () => {
-      LoginPage.loginButton.click()
-      let loginMessage = LoginPage.loginMessage.getText()
-      LoginPage.refreshPage()
+    LoginPage.loginButton.click()
+    let loginMessage = LoginPage.loginMessage
+    LoginPage.refreshPage()
 
-      expect(loginMessage).to.eql('Your username is invalid!\n×')
+    expect(loginMessage).to.eql('Your username is invalid!\n×')
   })
 
   it('Page footer should have correct text', () => {
-    expect(HomePage.pageFooter.getText()).to.eql('Powered by Elemental Selenium')
+    expect(HomePage.pageFooter.text).to.eql('Powered by Elemental Selenium')
   })
 
   it('Page footer should have correct link', () => {
-    expect(HomePage.pageFooterLink.getAttribute('href')).to.eql('http://elementalselenium.com/')
+    expect(HomePage.pageFooter.link).to.eql('http://elementalselenium.com/')
   })
-
-});
+})
