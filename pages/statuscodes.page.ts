@@ -5,8 +5,8 @@ interface ILink {
 
 import BasePage from '../pages/base.page'
 
-class StatusCodes_Page extends BasePage {
-  public open(): StatusCodes_Page {
+class StatusCodesPage extends BasePage {
+  public open(): StatusCodesPage {
     browser.url('/status_codes')
     return this
   }
@@ -43,5 +43,5 @@ class StatusCodes_Page extends BasePage {
     }
   }
 }
-const StatusCodesPage = new StatusCodes_Page()
-export default StatusCodesPage
+
+export default new StatusCodesPage()

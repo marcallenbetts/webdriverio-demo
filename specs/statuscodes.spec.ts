@@ -1,9 +1,10 @@
-var expect = require('chai').expect
+import { expect } from 'chai'
+
 import HomePage from '../pages/home.page'
 import StatusCodesPage from '../pages/statuscodes.page'
 
 describe('Status Codes page', () => {
-  before(function() {
+  before(() => {
     HomePage.open().clickLinkWithText('Status Codes')
   })
 
@@ -21,7 +22,7 @@ describe('Status Codes page', () => {
 
   it('200 link should link to 200 page', () => {
     expect(StatusCodesPage.twoHundred.link).to.eql(
-      StatusCodesPage.baseUrl + 'status_codes/200'
+      `${StatusCodesPage.baseUrl}status_codes/200`
     )
   })
 
@@ -31,7 +32,7 @@ describe('Status Codes page', () => {
 
   it('301 link should link to 301 page', () => {
     expect(StatusCodesPage.threeHundredOne.link).to.eql(
-      StatusCodesPage.baseUrl + 'status_codes/301'
+      `${StatusCodesPage.baseUrl}status_codes/301`
     )
   })
 
@@ -41,7 +42,7 @@ describe('Status Codes page', () => {
 
   it('404 link should link to 404 page', () => {
     expect(StatusCodesPage.fourHundredFour.link).to.eql(
-      StatusCodesPage.baseUrl + 'status_codes/404'
+      `${StatusCodesPage.baseUrl}status_codes/404`
     )
   })
 
@@ -51,7 +52,7 @@ describe('Status Codes page', () => {
 
   it('500 link should link to 500 page', () => {
     expect(StatusCodesPage.fiveHundred.link).to.eql(
-      StatusCodesPage.baseUrl + 'status_codes/500'
+      `${StatusCodesPage.baseUrl}status_codes/500`
     )
   })
 

@@ -1,7 +1,7 @@
 import BasePage from '../pages/base.page'
 
-class Login_Page extends BasePage {
-  public open(): Login_Page {
+class LoginPage extends BasePage {
+  public open(): LoginPage {
     browser.url('/login')
     return this
   }
@@ -26,5 +26,5 @@ class Login_Page extends BasePage {
     return $('#flash').getText()
   }
 }
-const LoginPage = new Login_Page()
-export default LoginPage
+
+export default new LoginPage()
