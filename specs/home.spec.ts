@@ -1,8 +1,9 @@
-var expect = require('chai').expect
+import { expect } from 'chai'
+
 import HomePage from '../pages/home.page'
 
 describe('Home page', () => {
-  before(function() {
+  before(() => {
     HomePage.open()
   })
 

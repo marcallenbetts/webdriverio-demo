@@ -1,9 +1,10 @@
-var expect = require('chai').expect
+import { expect } from 'chai'
+
 import HomePage from '../pages/home.page'
 import LoginPage from '../pages/login.page'
 
 describe('Login page', () => {
-  before(function() {
+  before(() => {
     HomePage.open().clickLinkWithText('Form Authentication')
   })
 
@@ -17,7 +18,7 @@ describe('Login page', () => {
 
   it('Blank username and password should display error message', () => {
     LoginPage.loginButton.click()
-    let loginMessage = LoginPage.loginMessage
+    const loginMessage = LoginPage.loginMessage
     LoginPage.refreshPage()
 
     expect(loginMessage).to.eql('Your username is invalid!\n×')

@@ -20,8 +20,8 @@ class BasePage {
     return this
   }
 
-  //get browser options. for now, just exposing the baseUrl
-  public get baseUrl(): String {
+  // get browser options. for now, just exposing the baseUrl
+  public get baseUrl(): string {
     return browser.options.baseUrl
   }
 }

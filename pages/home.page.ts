@@ -1,7 +1,7 @@
 import BasePage from '../pages/base.page'
 
-class Home_Page extends BasePage {
-  public open(): Home_Page {
+class HomePage extends BasePage {
+  public open(): HomePage {
     browser.url('/')
     return this
   }
@@ -13,11 +13,10 @@ class Home_Page extends BasePage {
     return $('#content h2').getText()
   }
 
-  public clickLinkWithText(linkText: String): any {
-    $('=' + linkText).click()
+  public clickLinkWithText(linkText: string): any {
+    $(`=${linkText}`).click()
     return this
   }
 }
 
-const HomePage = new Home_Page()
-export default HomePage
+export default new HomePage()
