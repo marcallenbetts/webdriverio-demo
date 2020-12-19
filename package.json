@@ -4,8 +4,8 @@
   "description": "An example project using WebdriverIO with TypeScript",
   "main": "index.js",
   "scripts": {
-    "test": "tsc && swdio run wdio.conf.js --mochaOpts.timeout=10000 && rm -rf src",
-    "tslint": "./node_modules/tslint/bin/tslint --project tsconfig.json"
+    "test": "tsc && wdio run wdio.conf.js --mochaOpts.timeout=10000 && rm -rf src",
+    "tslint": "tslint --project tsconfig.json"
   },
   "repository": {
     "type": "git",
