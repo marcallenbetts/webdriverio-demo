@@ -7,7 +7,8 @@
     "experimentalDecorators": true,
     "removeComments": true,
     "noImplicitAny": false,
-    "outDir": "src/"
+    "outDir": "src/",
+    "types": ["node", "@wdio/sync", "mocha"]
   },
   "exclude": [
     "node_modules"
