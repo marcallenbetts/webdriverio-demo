@@ -8,10 +8,9 @@
     "removeComments": true,
     "noImplicitAny": false,
     "outDir": "src/",
-    "types": ["node", "@wdio/sync", "mocha"]
+    "types": ["node", "@wdio/sync", "mocha"],
+    "sourceMap": true
   },
-  "exclude": [
-    "node_modules"
-  ],
+  "exclude": ["node_modules"],
   "compileOnSave": false
 }

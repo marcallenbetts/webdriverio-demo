@@ -4,5 +4,4 @@ node_modules/
 src/
 
 # IDE related files
-.vscode
 .DS_Store
