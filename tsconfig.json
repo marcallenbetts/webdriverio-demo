@@ -8,8 +8,9 @@
     "removeComments": true,
     "noImplicitAny": false,
     "outDir": "src/",
-    "types": ["node", "@wdio/sync", "mocha"],
-    "sourceMap": true
+    "types": ["node", "webdriverio/sync", "@wdio/mocha-framework"],
+    "sourceMap": true,
+    "esModuleInterop": true
   },
   "exclude": ["node_modules"],
   "compileOnSave": false

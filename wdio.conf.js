@@ -7,9 +7,6 @@ exports.config = {
   // WebdriverIO allows it to run your tests in arbitrary locations (e.g. locally or
   // on a remote machine).
   runner: 'local',
-  hostname: 'localhost',
-  port: 4444,
-  path: '/',
   //
   // ==================
   // Specify Test Files
@@ -19,7 +16,7 @@ exports.config = {
   // NPM script (see https://docs.npmjs.com/cli/run-script) then the current working
   // directory is where your package.json resides, so `wdio` will be called from there.
   //
-  specs: ['./src/tests/**/*.js'],
+  specs: ['./src/tests/**/*.tests.js'],
   // Patterns to exclude.
   exclude: [
     // 'path/to/excluded/files'
@@ -61,7 +58,8 @@ exports.config = {
           '--disable-gpu',
           '--window-size=1440,735'
         ]
-      }
+      },
+      acceptInsecureCerts: true
       // If outputDir is provided WebdriverIO can capture driver session logs
       // it is possible to configure which logTypes to include/exclude.
       // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
@@ -75,14 +73,14 @@ exports.config = {
   // Define all options that are relevant for the WebdriverIO instance here
   //
   // Level of logging verbosity: trace | debug | info | warn | error | silent
-  logLevel: 'warn',
+  logLevel: 'info',
   //
   // Set specific log levels per logger
   // loggers:
   // - webdriver, webdriverio
   // - @wdio/applitools-service, @wdio/browserstack-service, @wdio/devtools-service, @wdio/sauce-service
   // - @wdio/mocha-framework, @wdio/jasmine-framework
-  // - @wdio/local-runner, @wdio/lambda-runner
+  // - @wdio/local-runner
   // - @wdio/sumologic-reporter
   // - @wdio/cli, @wdio/config, @wdio/sync, @wdio/utils
   // Level of logging verbosity: trace | debug | info | warn | error | silent
@@ -99,14 +97,14 @@ exports.config = {
   // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
   // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
   // gets prepended directly.
-  baseUrl: 'http://the-internet.herokuapp.com/',
+  baseUrl: 'http://localhost:5000/',
   //
   // Default timeout for all waitFor* commands.
   waitforTimeout: 10000,
   //
   // Default timeout in milliseconds for request
   // if browser driver or grid doesn't send response
-  connectionRetryTimeout: 90000,
+  connectionRetryTimeout: 120000,
   //
   // Default request retries count
   connectionRetryCount: 3,
@@ -115,11 +113,11 @@ exports.config = {
   // Services take over a specific job you don't want to take care of. They enhance
   // your test setup with almost no effort. Unlike plugins, they don't add new
   // commands. Instead, they hook themselves up into the test process.
-  services: ['selenium-standalone'],
+  services: ['chromedriver'],
 
   // Framework you want to run your specs with.
   // The following are supported: Mocha, Jasmine, and Cucumber
-  // see also: https://webdriver.io/docs/frameworks.html
+  // see also: https://webdriver.io/docs/frameworks
   //
   // Make sure you have the wdio adapter package for the specific framework installed
   // before running any tests.
@@ -128,9 +126,15 @@ exports.config = {
   // The number of times to retry the entire specfile when it fails as a whole
   // specFileRetries: 1,
   //
+  // Delay in seconds between the spec file retry attempts
+  // specFileRetriesDelay: 0,
+  //
+  // Whether or not retried specfiles should be retried immediately or deferred to the end of the queue
+  // specFileRetriesDeferred: false,
+  //
   // Test reporter for stdout.
   // The only one supported by default is 'dot'
-  // see also: https://webdriver.io/docs/dot-reporter.html
+  // see also: https://webdriver.io/docs/dot-reporter
   reporters: ['spec'],
 
   //
@@ -156,6 +160,17 @@ exports.config = {
   // onPrepare: function (config, capabilities) {
   // },
   /**
+   * Gets executed before a worker process is spawned and can be used to initialise specific service
+   * for that worker as well as modify runtime environments in an async fashion.
+   * @param  {String} cid      capability id (e.g 0-0)
+   * @param  {[type]} caps     object containing capabilities for session that will be spawn in the worker
+   * @param  {[type]} specs    specs to be run in the worker process
+   * @param  {[type]} args     object that will be merged with the main configuration once worker is initialised
+   * @param  {[type]} execArgv list of string arguments passed to the worker process
+   */
+  // onWorkerStart: function (cid, caps, specs, args, execArgv) {
+  // },
+  /**
    * Gets executed just before initialising the webdriver session and test framework. It allows you
    * to manipulate configurations depending on the capability or spec.
    * @param {Object} config wdio configuration object
@@ -168,7 +183,8 @@ exports.config = {
    * Gets executed before test execution begins. At this point you can access to all global
    * variables like `browser`. It is the perfect place to define custom commands.
    * @param {Array.<Object>} capabilities list of capabilities details
-   * @param {Array.<String>} specs List of spec file paths that are to be run
+   * @param {Array.<String>} specs        List of spec file paths that are to be run
+   * @param {Object}         browser      instance of created browser/device session
    */
   // before: function (capabilities, specs) {
   // },
