@@ -1,40 +1,41 @@
 {
-  "name": "webdriver_typescript",
+  "name": "webdriverio-demo",
   "version": "1.0.0",
-  "description": "An example project using WebdriverIO with TypeScript",
-  "main": "index.js",
+  "description": "demo of webdriverio v7",
+  "main": "wdio.conf.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@wdio/cli": "^7.0.1",
+    "@wdio/devtools-service": "^7.0.1",
+    "@wdio/local-runner": "^7.0.1",
+    "@wdio/mocha-framework": "^7.0.0",
+    "@wdio/selenium-standalone-service": "^7.0.1",
+    "@wdio/spec-reporter": "^7.0.1",
+    "@wdio/sync": "^7.0.1",
+    "@wdio/types": "^7.0.0",
+    "chai": "^4.3.0",
+    "chromedriver": "^88.0.0",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.4",
+    "wdio-chromedriver-service": "^6.0.4"
+  },
   "scripts": {
-    "test": "tsc && wdio run wdio.conf.js --mochaOpts.timeout=10000 && rm -rf src",
-    "tslint": "tslint --project tsconfig.json"
+    "pretest": "docker-compose up &",
+    "test": "wdio run wdio.conf.js",
+    "posttest": "docker-compose down"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/WillLuce/WebdriverIO_Typescript.git"
+    "url": "git+https://github.com/marcallenbetts/webdriverio-demo.git"
   },
-  "keywords": [
-    "Selenium",
-    "Mocha",
-    "WebdriverIO"
-  ],
-  "author": "William Luce",
-  "license": "MIT",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "bugs": {
-    "url": "https://github.com/WillLuce/WebdriverIO_Typescript/issues"
+    "url": "https://github.com/marcallenbetts/webdriverio-demo/issues"
   },
-  "homepage": "https://github.com/WillLuce/WebdriverIO_Typescript#readme",
-  "devDependencies": {
-    "@types/chai": "^3.4.34",
-    "@types/mocha": "^2.2.32",
-    "@wdio/cli": "^6.0.5",
-    "@wdio/local-runner": "^6.0.5",
-    "@wdio/mocha-framework": "^6.0.4",
-    "@wdio/selenium-standalone-service": "^6.0.4",
-    "@wdio/spec-reporter": "^6.0.4",
-    "@wdio/sync": "^6.0.1",
-    "chai": "^3.5.0",
-    "tslint": "^6.1.0",
-    "tslint-config-prettier": "^1.18.0",
-    "tslint-eslint-rules": "^5.4.0",
-    "typescript": "^3.8.3"
-  }
+  "homepage": "https://github.com/marcallenbetts/webdriverio-demo#readme"
 }
