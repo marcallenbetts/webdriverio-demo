@@ -19,7 +19,7 @@
     "@wdio/sync": "^7.0.1",
     "@wdio/types": "^7.0.0",
     "chai": "^4.3.0",
-    "chromedriver": "^88.0.0",
+    "chromedriver": "^93.0.0",
     "eslint": "^7.20.0",
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-prettier": "^3.3.1",

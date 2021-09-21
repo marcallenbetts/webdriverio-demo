@@ -21,9 +21,7 @@ describe('Status Codes page', () => {
   })
 
   it('200 link should link to 200 page', () => {
-    expect(StatusCodesPage.twoHundred.link).to.eql(
-      `${StatusCodesPage.baseUrl}status_codes/200`
-    )
+    expect(StatusCodesPage.twoHundred.link).to.eql('status_codes/200')
   })
 
   it('Page should have a 301 link', () => {
@@ -31,9 +29,7 @@ describe('Status Codes page', () => {
   })
 
   it('301 link should link to 301 page', () => {
-    expect(StatusCodesPage.threeHundredOne.link).to.eql(
-      `${StatusCodesPage.baseUrl}status_codes/301`
-    )
+    expect(StatusCodesPage.threeHundredOne.link).to.eql('status_codes/301')
   })
 
   it('Page should have a 404 link', () => {
@@ -41,9 +37,7 @@ describe('Status Codes page', () => {
   })
 
   it('404 link should link to 404 page', () => {
-    expect(StatusCodesPage.fourHundredFour.link).to.eql(
-      `${StatusCodesPage.baseUrl}status_codes/404`
-    )
+    expect(StatusCodesPage.fourHundredFour.link).to.eql('status_codes/404')
   })
 
   it('Page should have a 500 link', () => {
@@ -51,9 +45,7 @@ describe('Status Codes page', () => {
   })
 
   it('500 link should link to 500 page', () => {
-    expect(StatusCodesPage.fiveHundred.link).to.eql(
-      `${StatusCodesPage.baseUrl}status_codes/500`
-    )
+    expect(StatusCodesPage.fiveHundred.link).to.equal('status_codes/500')
   })
 
   it('Page footer should have correct text', () => {
